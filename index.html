@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FLEET5</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<a href="index.html">
+				<img src="images/logo.png" alt="">
+			</a>
+		</div>
+		<div class="menu">
+			<a id='current' href="#">СЕРВИСЫ</a>
+			<a href="date.html">КАЛЕНДАРЬ</a>
+			<a href="news.html">НОВОСТИ</a>
+			<a href="contacts.html">КОНТАКТЫ</a>
+			<span>
+				<a href="tel:">044 254 45 45</a>
+			</span>
+		</div>
+	</header>
+	<main>
+		<div class="blok" id="block1-left"><a href="#" onclick="openbox();return false;"><p>ЯХТ-ВИКИ</p></a></div>
+		<div class="blok"><a href="#" onclick="openbox();return false;"><p>АРЕНДА ЯХТ</p></a></div>
+		<div class="blok"><a href="#" onclick="openbox();return false;"><p>РЕГАТЫ</p></a></div>
+		<div id="box" class="info-block">
+			<div class="info-block-left">
+				<h1>АКАДЕМИЯ</h1>
+				<ul>
+					<li><a href="#" class="linkHover" textId="text1">ЛИЦЕНЗИИ<hr id="hr1"><hr id="hr-right1" class="line-right"></a></li>
+					<li><a href="#" class="linkHover" textId="text2">ТЕОРЕТИЧЕСКИЙ КУРС<hr id="hr2"><hr id="hr-right2" class="line-right"></a></li>
+					<li><a href="#" class="linkHover" textId="text3">ПРАКТИЧЕСКИЙ КУРС<hr id="hr3"><hr id="hr-right3" class="line-right"></a></li>
+					<li><a href="#" class="linkHover" textId="text4">ИНСТРУКТОРЫ<hr id="hr4"><hr id="hr-right4" class="line-right"></a></li>
+					<li><a href="#" class="linkHover" textId="text5">КЛАССЫ ОБУЧЕНИЯ<hr id="hr5"><hr id="hr-right6" class="line-right"></a></li>
+					<li><a href="#" class="linkHover" textId="text6">ФЛОТИЛИИ МОЛОДЫХ КАПИТАНОВ<hr id="hr6"><hr id="hr-right6" class="line-right"></a></li>
+				</ul>
+			</div>
+			<div class="info-block-right">
+				<a href="#" onclick="closebox();return false;"><img src="images/icon.png" alt=""></a>
+				
+				<p class="text-right" id="text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+				<p class="text-right" id="text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+				<p class="text-right" id="text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+				<p class="text-right" id="text4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+				<p class="text-right" id="text5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+				<p class="text-right" id="text6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quos labore, suscipit repellat officiis eum!</p>
+			</div>
+			<div class="clear" style="clear: both;"></div>
+		</div>
+	</main>
+	<footer></footer>
+
+	<script type="text/javascript">
+
+		document.getElementById('box').onmouseover = document.getElementById('box').onmouseout = handler;
+
+		function handler(event) {
+			if(event.target.className.includes("linkHover")) {
+			  if (event.type == 'mouseover') {
+			  	document.getElementById(event.target.getAttribute('textId')).style.visibility = "visible";
+			  }
+			  if (event.type == 'mouseout') {
+			  	document.getElementById(event.target.getAttribute('textId')).style.visibility = "hidden";
+			  }
+			} else if(event.target.parentNode.className.includes("linkHover")) {
+				if (event.type == 'mouseover') {
+			  	document.getElementById(event.target.parentNode.getAttribute('textId')).style.visibility = "visible";
+			  }
+			  if (event.type == 'mouseout') {
+			  	document.getElementById(event.target.parentNode.getAttribute('textId')).style.visibility = "hidden";
+			  }
+			}
+		}
+
+		function openbox(){
+			var id = 'box';
+			var elem = document.getElementById(id);
+			var style = getComputedStyle(elem);
+		    if(style.display=='none'){
+		       document.getElementById(id).style.display='block';
+		    }else{
+		       document.getElementById(id).style.display='none';
+		    }
+		    
+		}
+
+		function closebox(){
+			var id = 'box';
+		    display = document.getElementById(id).style.display;
+		    if(display=='block'){
+		       document.getElementById(id).style.display='none';
+		    }
+		}
+	</script>
+
+</body>
+</html>
